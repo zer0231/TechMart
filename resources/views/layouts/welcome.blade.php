@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>TMl</title>
         <style>
+
         .error{
           display: none;
         }
@@ -21,7 +22,7 @@
             <form class="form-inline">
               <div class="drop123down">
                 <a href="{{url('/')}}"><image height="35%" width="35%" src="{{asset('/images/logo.png')}}"></a>
-                <input class="form-control mr-sm-2" type="search" name="search" id="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" name="search" pattern="\S+.*" id="search" placeholder="Search" aria-label="Search">
               </div>
             </form>
             @if (Route::has('login'))
@@ -47,14 +48,19 @@
             <script type="text/javascript">
             $('#search').on('keyup',function(){
             $value=$(this).val();
+
             $.ajax({
             type : 'get',
             url : '{{URL::to('search')}}',
             data:{'search':$value},
             success:function(data){
+              // if( !$(this).val() ) {
+              //     $('#from_ajax').hide();
+              // }
           //  $('#initial_table').hide();
             $('#search_recommend').html(data);
             }
+
             });
             })
             </script>
