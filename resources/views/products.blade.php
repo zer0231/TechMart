@@ -3,14 +3,14 @@
 @section('products')
 @foreach($products as $key)
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{ $key->img_path }}" alt="Card image cap">
+  <img class="card-img-top" src="{{ $key->product_img_path }}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{ $key->name }}</h5>
+    <h5 class="card-title">{{ $key->product_name }}</h5>
     <p class="card-text">Description.</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Price:{{ $key->quantity }}</li>
-    <li class="list-group-item">Brand:{{ $key->brand }}</li>
+    <li class="list-group-item">Price:{{ $key->product_quantity }}</li>
+    <li class="list-group-item">Brand:{{ $key->product_brand }}</li>
     <li class="list-group-item">Uploaded By:{{$key->name}}</li>
   </ul>
   <div class="card-body">

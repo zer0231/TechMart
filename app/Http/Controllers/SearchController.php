@@ -13,15 +13,15 @@ public function search(Request $request)
 if($request->ajax())
 {
 $output="";
-$products=DB::table('products')->where('name','LIKE','%'.$request->search."%")->get();
+$products=DB::table('products')->where('product_name','LIKE','%'.$request->search."%")->get();
 if($products)
 {
 foreach ($products as $key => $product) {
 $output.='<tr>'.
-'<td>'.$product->id.'</td>'.
-'<td>'.$product->name.'</td>'.
-'<td>'.$product->brand.'</td>'.
-'<td>'.$product->price.'</td>'.
+'<td>'.$product->product_id.'</td>'.
+'<td>'.$product->product_name.'</td>'.
+'<td>'.$product->product_brand.'</td>'.
+'<td>'.$product->product_price.'</td>'.
 '</tr>';
 }
 return Response($output);

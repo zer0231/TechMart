@@ -39,14 +39,14 @@ class HomeController extends Controller
 
    public function upload(Request $request)
    {
-     $data = $request->input('image');
+     $data = $request->input('product_image');
      $photo = $this->generate_string().'.png';
      $destination = base_path() . '/public/images';
      $request->file('image')->move($destination, $photo);
      $image_name='images/'.$photo;
      $product_name = $request->input('product_name');
      $product_price = $request->input('product_price');
-     $data=array('name'=>$product_name,'brand'=>'test','img_path'=>$image_name,'quantity'=>'2','price'=>$product_price,'user_id'=>$request->input('user_id'));
+     $data=array('product_name'=>$product_name,'product_brand'=>'test','product_img_path'=>$image_name,'product_quantity'=>'2','product_price'=>$product_price,'user_id'=>$request->input('user_id'));
      DB::table('products')->insert($data);
      echo "Record inserted successfully.<br/>";
      echo '<a href = "/home">Click Here</a> to go back.';
