@@ -38,9 +38,7 @@ $output.="<li><a  href='".url('product/about/'.$product->product_id)."'>".$produ
 $output.="</ul></div>";
 return Response($output);
 }
-else{
 
-}
  }}
 
 
@@ -48,7 +46,7 @@ else{
 
   public function about($id)
   {
-    $about = DB::select('select * from products where id ='.$id);
+    $about = DB::select('select * from products where product_id ='.$id);
     return view('about',['about'=>$about]);
   }
 }
