@@ -8,5 +8,6 @@
                 $function->__invoke();
             }
         }
+       
     }
 ?>
