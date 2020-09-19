@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Page</title>
-   
-</head>
-<body>
-
-<?php
-include 'partials/nav.php';
-?>
-
 <?php foreach($products as $product){ ?> 
     <form method="post" action="home.php?action=add&id=<?php echo $product['product_id']; ?>">
      <?php   echo $product['product_id'];?>
@@ -26,7 +11,3 @@ include 'partials/nav.php';
         <input type="submit" name="add_to_cart"  value="Add to Cart" />
         </form>
 <?php } ?>
-
-
-</body>
-</html>
