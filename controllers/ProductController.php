@@ -8,5 +8,4 @@
             self::createView($route, $data);
         }
     }
-    $obj = new ProductController;
 ?>

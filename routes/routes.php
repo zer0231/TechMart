@@ -9,4 +9,11 @@
     Route::set('list_products',function(){
         ProductController::showItem('list_products');
     });
+
+    Route::set('login',function(){
+        UserController::showLogin('login');
+    });
+    Route::set('signup',function(){
+        UserController::showSignup('signup');
+    });
 ?>
