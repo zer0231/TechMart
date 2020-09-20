@@ -7,8 +7,9 @@
             $host='localhost';
             $user='root';
             $pass='';   
-            $db='techmart';
-            try
+          //  $db='techmart';
+            $db="tm";  
+          try
             {
                 $dsn = "mysql:host=$host;dbname=$db";
                 self::$pdo = new PDO($dsn,$user,$pass);
